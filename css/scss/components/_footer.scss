@@ -1,0 +1,258 @@
+@use "../variable" as v;
+
+.footer {
+  width: 100%;
+  background-color: v.$footer-bg;
+  padding: 30px 0;
+
+  &__container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    @media (max-width: 1280px) {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+
+  &__copy {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 347px;
+    font-family: v.$font-family, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: v.$second-color;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+
+    @media (max-width: 1024px) {
+      max-width: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &-link {
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: inherit;
+      -webkit-transition: color v.$tr;
+      -o-transition: color v.$tr;
+      transition: color v.$tr;
+
+      &:hover {
+        -webkit-transition: color v.$tr;
+        -o-transition: color v.$tr;
+        transition: color v.$tr;
+        color: v.$accent-color;
+      }
+    }
+  }
+
+  &__payment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 476px;
+    position: relative;
+
+    @media (max-width: 1280px) {
+      max-width: 50%;
+    }
+
+    @media (max-width: 1024px) {
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 2px;
+      left: 0;
+      bottom: 2px;
+      width: 1px;
+      height: 100%;
+      background-color: #c3c3c3;
+
+      @media (max-width: 1024px) {
+        content: none;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 2px;
+      right: 0;
+      bottom: 2px;
+      width: 1px;
+      height: 100%;
+      background-color: #c3c3c3;
+
+      @media (max-width: 1280px) {
+        content: none;
+      }
+    }
+
+    &-item {
+      padding: 0;
+      margin: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      gap: 10px;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      & span {
+        display: inline-block;
+        color: #c3c3c3;
+        font-family: v.$font-family, sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__contact.contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 345px;
+    padding-left: 35px;
+
+    @media (max-width: 1280px) {
+      padding-left: 0;
+      max-width: 50%;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 1024px) {
+      max-width: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    & > a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      text-transform: lowercase;
+      color: v.$second-color;
+      text-decoration: none;
+      gap: 10px;
+      font-family: v.$font-family, sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      -webkit-transition: color v.$tr;
+      -o-transition: color v.$tr;
+      transition: color v.$tr;
+
+      &:hover {
+        -webkit-transition: color v.$tr;
+        -o-transition: color v.$tr;
+        transition: color v.$tr;
+        color: v.$accent-color;;
+      }
+
+      &:last-child {
+        text-transform: none;
+        margin-left: auto;
+
+        @media (max-width: 1280px) {
+          margin-left: 40px;
+        }
+
+        @media (max-width: 768px) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

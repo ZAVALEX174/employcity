@@ -1,0 +1,24 @@
+@use "../variable" as v;
+
+.logo {
+  padding: 0;
+  margin: 0 20px 0 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: v.$second-family, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
+  text-transform: uppercase;
+  color: v.$second-color;
+  position: relative;
+  z-index: 10;
+
+  & > span {
+    color: v.$logo-span-color;
+  }
+}

@@ -1,0 +1,334 @@
+@use "../variable" as v;
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .form__input, .form__btn-submit, select {
+    width: calc((100% - 60px) / 3);
+    height: 100%;
+
+    @media (max-width: 1024px) {
+      width: calc((100% - 30px) / 2);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  & .form__input-custom-select {
+    width: calc((100% - 60px) / 3);
+    position: relative;
+
+    @media (max-width: 1024px) {
+      width: calc((100% - 30px) / 2);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    & select {
+      width: 100%;
+      height: 100%;
+      padding: 13px 10px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid v.$second-color;
+      border-radius: 3px;
+      font-family: v.$font-family, sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: v.$placeholder-color;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      overflow-y: auto;
+
+      &:focus-visible {
+        background-color: #3D4050;
+        color: v.$second-color;
+
+        & option {
+          background-color: #272733;
+
+          &:checked {
+            color: v.$accent-color;
+          }
+        }
+      }
+    }
+
+    &-arrow {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      pointer-events: none;
+      -webkit-transition: fill v.$tr;
+      -o-transition: fill v.$tr;
+      transition: fill v.$tr;
+      color: v.$main-color;
+    }
+  }
+
+  & .form__input-custom-select select:focus-visible + .form__input-custom-select-arrow {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    color: v.$second-color;
+  }
+
+  & .form__input-email {
+
+    & input {
+      padding: 13px 10px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid v.$second-color;
+      border-radius: 3px;
+      width: 100%;
+      font-family: v.$font-family, sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: v.$placeholder-color;
+    }
+  }
+
+  & .form__input-name {
+
+    & input {
+      padding: 13px 10px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid v.$second-color;
+      border-radius: 3px;
+      width: 100%;
+      font-family: v.$font-family, sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: v.$placeholder-color;
+    }
+  }
+
+  & .form__input-range {
+    width: calc(((100% - 17px) / 3) * 2);
+
+    @media (max-width: 1024px) {
+      width: calc((100% - 30px) / 2);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    & input[type='range'] {
+      width: 100%;
+      -webkit-appearance: none;
+      height: 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.7);
+      outline: none;
+      position: relative;
+    }
+
+    & input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: v.$logo-span-color;
+      cursor: pointer;
+      border: 3px solid #286690;
+      top: -10px;
+      position: relative;
+    }
+
+    & input[type='range']::-moz-range-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: v.$logo-span-color;
+      cursor: pointer;
+      border: 3px solid #286690;
+      top: -10px;
+      position: relative;
+    }
+
+    & input[type='range']::-ms-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: v.$logo-span-color;
+      cursor: pointer;
+      border: 3px solid #286690;
+      top: -10px;
+      position: relative;
+    }
+
+    & input[type='range']::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 4px;
+    }
+
+    & input[type='range']::-moz-range-track {
+      height: 6px;
+      border-radius: 4px;
+    }
+
+    & input[type='range']::-ms-track {
+      height: 6px;
+      border-radius: 4px;
+      color: transparent;
+      background: transparent;
+    }
+
+    &-value {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 20px;
+
+      & span {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        font-family: v.$font-family, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: v.$second-color;
+      }
+    }
+  }
+
+  & .form__btn-file {
+    width: calc((100% - 60px) / 3);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    @media (max-width: 1024px) {
+      width: calc((100% - 30px) / 2);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 290px;
+    }
+
+    &-label {
+      padding: 11px 10px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid v.$second-color;
+      border-radius: 3px;
+      width: 100%;
+      font-family: v.$font-family, sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: v.$placeholder-color;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      cursor: pointer;
+      -webkit-transition: background-color v.$tr, color v.$tr, border v.$tr;
+      -o-transition: background-color v.$tr, color v.$tr, border v.$tr;
+      transition: background-color v.$tr, color v.$tr, border v.$tr;
+
+      @media (max-width: 1024px) {
+        padding: 13px 10px;
+      }
+
+      &:focus-visible {
+        border: 1px solid red;
+      }
+
+      &:hover {
+        -webkit-transition: background-color v.$tr, color v.$tr, border v.$tr;
+        -o-transition: background-color v.$tr, color v.$tr, border v.$tr;
+        transition: background-color v.$tr, color v.$tr, border v.$tr;
+        background-color: v.$btn-color-accent;
+        color: v.$second-color;
+
+        & svg path {
+          -webkit-transition: background-color v.$tr, fill v.$tr, border v.$tr;
+          -o-transition: background-color v.$tr, fill v.$tr, border v.$tr;
+          transition: background-color v.$tr, fill v.$tr, border v.$tr;
+          fill: v.$second-color;
+        }
+      }
+
+      & svg {
+        -webkit-transition: background-color v.$tr, fill v.$tr, border v.$tr;
+        -o-transition: background-color v.$tr, fill v.$tr, border v.$tr;
+        transition: background-color v.$tr, fill v.$tr, border v.$tr;
+        margin-right: 10px;
+      }
+
+      & > input {
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  & .form__btn-submit {
+    margin: 10px auto 0;
+
+    @media (max-width: 1024px) {
+      margin: 0;
+      width: calc((100% - 30px) / 2);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 290px;
+    }
+  }
+
+  & .form__btn-submit.form__btn_accent {
+    background-color: v.$btn-color-accent;
+    color: v.$second-color;
+    border-color: v.$second-color;
+    -webkit-transition: background-color v.$tr, color v.$tr, border v.$tr;
+    -o-transition: background-color v.$tr, color v.$tr, border v.$tr;
+    transition: background-color v.$tr, color v.$tr, border v.$tr;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid v.$border-color-light;
+      background-color: v.$second-color;
+      color: v.$btn-color-light;
+      -webkit-transition: background-color v.$tr, color v.$tr, border v.$tr;
+      -o-transition: background-color v.$tr, color v.$tr, border v.$tr;
+      transition: background-color v.$tr, color v.$tr, border v.$tr;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use "font" as f;
+
+$font-family: "Lato";
+$second-family: "Raleway";
+//transition
+$tr: .3s linear;
+
+//colors
+$main-color: #000000;
+$second-color: #ffffff;
+$light-color: #bbbbbb;
+$placeholder-color: #272733;
+$accent-color: #43abf0;
+$btn-color-light: #2a2b30;
+$btn-color-accent: #3e9cdc;
+$title-color-accent: #3e9cdc;
+$logo-span-color: #42a9ed;
+$border-color-light: #6f6d7b;
+
+$header-bg: rgba(16, 16, 29, 0.9);
+$footer-bg: #3d4050;

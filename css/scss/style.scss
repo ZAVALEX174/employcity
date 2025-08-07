@@ -1,0 +1,12 @@
+@use "./font" as *;
+@use "./variable" as *;
+@use "./general" as *;
+
+@use "./components/header" as *;
+@use "./components/logo" as *;
+@use "./components/navigation" as *;
+@use "./components/burger" as *;
+@use "./components/hero" as *;
+@use "./components/registration" as *;
+@use "./components/form" as *;
+@use "./components/footer" as *;
